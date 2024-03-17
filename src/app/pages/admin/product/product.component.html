@@ -1,0 +1,82 @@
+<div class="row">
+    <div  [ngClass]="isSidbar? 'col-8':'col-15'" >
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                   <div class="col-6">
+                         product list </div>
+                        <div class="col-6 text-end">
+                          <button class="btn btn-sm btn-success" (click)="openSid()">
+                           new
+                            </button>
+                        </div>
+                   
+                        </div>
+             
+                       </div>
+                     <div class="card-bady">
+                             <div class="row"> 
+                             <div class="col-6 ">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">descriptionn here</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                          </div>
+                           </div> 
+                    
+                    </div>
+        </div> 
+        
+    </div>
+    <div class="col-4" *ngIf="isSidbar">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                   <div class="col-6">
+                        new product    </div>
+                        <div class="col-6 text-end">
+                          <button class="btn btn-sm btn-success" (click)="closeSid()">
+                         close 
+                            </button>
+                        </div>
+                </div>     
+          </div><div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-4 col-form-label">product Name</label>
+                    <div class="col-sm-5">
+                      <input type="text" [(ngModel)]="data.Name" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                    <label for="inputPassword" class="col-sm-4 col-form-label">price</label>
+                    <div class="col-sm-5">
+                      <input type="number" [(ngModel)]="data.Price" class="form-control" id="inputPassword" placeholder="Password">
+                    </div> <br>
+                    <label for="inputPassword" class="col-sm-4 col-form-label">categorys</label>
+                    <select *ngModel="data.id" >
+                        <option *ngFor="let item of data" [value]="item">{{item.title}}</option>
+                    </select>
+                   
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Quantity</label>
+                    <div class="col-sm-5">
+                      <input type="number" [(ngModel)]="data.Qte" class="form-control" id="inputPassword" placeholder="Password">
+                    </div> <br>
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Date</label>
+                    <div class="col-sm-5">
+                      <input type="date" [(ngModel)]="data" class="form-control" id="inputPassword" placeholder="Password">
+                    </div> 
+               
+                <button type="submit" class="btn btn-success">add</button><br> 
+                     
+                </div>
+                  
+                </form>
+            
+          
+        </div> 
+        
+    </div>
+</div>
